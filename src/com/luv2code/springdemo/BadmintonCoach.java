@@ -1,6 +1,14 @@
 package com.luv2code.springdemo;
 
 public class BadmintonCoach implements Coach {
+	
+	private FortuneService fortuneService;
+	
+
+	public BadmintonCoach(FortuneService fortuneService) {
+		super();
+		this.fortuneService = fortuneService;
+	}
 
 	@Override
 	public String getDailyWorkout() {
@@ -14,4 +22,11 @@ public class BadmintonCoach implements Coach {
 		return null;
 	}
 
+	public void init() {
+		System.out.println("init");
+	}
+	
+	public void destroy() {
+		System.out.println("destroy");
+	}
 }
